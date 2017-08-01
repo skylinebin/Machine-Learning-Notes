@@ -1,6 +1,8 @@
 #! python3
 # coding=utf-8
 
+#学习numpy的矩阵相乘和形状重构
+
 import numpy as np
 import pandas as pd
 
