@@ -1,4 +1,4 @@
-''' _*_ coding:UTF-8  _*_ '''
+'''# _*_ coding:UTF-8  _*_ '''
 # coding:utf-8
 
 #学习使用numpy分割矩阵

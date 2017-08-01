@@ -1,4 +1,4 @@
-''' _*_ coding:UTF-8 _*_ '''
+'''# _*_ coding:UTF-8 _*_ '''
 # coding:utf-8
 
 #numpy的赋值情况学习
