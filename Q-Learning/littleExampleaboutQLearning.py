@@ -20,7 +20,7 @@ N_STATES = 6   # 1维世界的宽度 初始距离
 ACTIONS = ['left', 'right'] #探索者的可用动作
 EPSILON = 0.9   # 贪婪度 greedy
 ALPHA = 0.1     # 学习率
-GAMMA = 0.9    # 奖励递减值
+GAMMA = 0.9    # 奖励递减值0
 MAX_EPISODES = 13   # 最大回合数
 FRESH_TIME = 0.2    # 移动间隔时间
 
@@ -92,6 +92,7 @@ def update_env(S, episode, step_counter):
 def rl():
 	#主循环运行函数
 	q_table = build_q_table(N_STATES, ACTIONS)
+	studyrecording = np.arange(MAX_EPISODES)
 	for episode in range(MAX_EPISODES):
 		step_counter = 0
 		S = 0 #初始在最左边
@@ -113,14 +114,17 @@ def rl():
 
 			update_env(S, episode, step_counter+1)
 			step_counter += 1
-	return q_table
+		studyrecording[episode] = step_counter
+	return q_table,studyrecording
 
 
 
 if __name__ == '__main__':
-	q_table = rl()
+	q_table,studyrecording = rl()
 	print('\r\nQ-table:\n')
 	print(q_table)
+	print('\r\nThe Study Recording:\n')
+	print(studyrecording)
 
 
 
