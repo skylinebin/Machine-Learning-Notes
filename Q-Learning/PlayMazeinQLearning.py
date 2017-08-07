@@ -16,7 +16,7 @@ import pandas as pd
 
 
 def update():
-	for episode in range(100):
+	for episode in range(30):
 		observation = env.reset()
 		#环境给出的观测值
 
@@ -39,6 +39,8 @@ def update():
 
 			if done:
 				break
+
+		print(action,observation)
 
 	# end this game
 	print('game over\n')
