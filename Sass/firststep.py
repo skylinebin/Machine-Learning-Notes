@@ -1,6 +1,11 @@
 ''' _*_ coding:UTF-8 _*_ '''
 # coding:utf-8
 
+#学习Sarsa算法
+#了解Sarsa算法与Q-Learning算法的不同点与相同点
+# 主要代码来自morvanzhou博客
+
+
 from maze_env import Maze
 from RL_brain import SarsaTable
 
