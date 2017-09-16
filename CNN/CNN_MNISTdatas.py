@@ -15,16 +15,19 @@ def compute_accuracy(v_xs, v_ys):
     return result
 
 def weight_variable(shape):
-    initial = tf.truncated_normal(shape, stddev=0.1)
+    initial = tf.truncated_normal(shape, stddev=0.1)#random initial
     return tf.Variable(initial)
 
 def bias_variable(shape):
     initial = tf.constant(0.1, shape=shape)
     return tf.Variable(initial)
 
+# Start define CNN
+# x 是图片的所有信息
+# Weight 是
 def conv2d(x, W):
     # stride [1, x_movement, y_movement, 1]
-    # Must have strides[0] = strides[3] = 1
+    # Must have strides[0] = strides[3] = 1 stride是跨越度
     return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
 
 def max_pool_2x2(x):
@@ -42,7 +45,7 @@ x_image = tf.reshape(xs, [-1, 28, 28, 1])
 W_conv1 = weight_variable([5,5, 1,32]) # patch 5x5, in size 1, out size 32
 b_conv1 = bias_variable([32])
 h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1) # output size 28x28x32
-h_pool1 = max_pool_2x2(h_conv1)                                         # output size 14x14x32
+h_pool1 = max_pool_2x2(h_conv1)                      # output size 14x14x32
 
 ## conv2 layer ##
 W_conv2 = weight_variable([5,5, 32, 64]) # patch 5x5, in size 32, out size 64
@@ -78,8 +81,8 @@ else:
     init = tf.global_variables_initializer()
 sess.run(init)
 
-for i in range(1000):
+for i in range(500):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
     if i % 50 == 0:
-        print(compute_accuracy(mnist.test.images[:1000], mnist.test.labels[:1000]))
+        print(compute_accuracy(mnist.test.images[:500], mnist.test.labels[:500]))
