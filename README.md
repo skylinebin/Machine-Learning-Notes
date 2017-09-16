@@ -1,12 +1,13 @@
-# Hello-World
-My first Github repository
+# Machine-Learning-Notes
+It's turned from my first Github repository
 
-I have studyed some programming language,
-like C,Java,Python....
+By Python3.5
 
-I had accomplished some little projects,
-such as "Local Area Network Video Communications" by Java,
-developed Little system in 51Micro and STM32  Embedded system ....
-I am learning how to develop little game by Python recently.
+All codes can be used in Windows and Ubuntu16.04
+
+Those notes are about the DRL(Deep Reinforcement Learning)
+contain:
+Q-Learning、Sass、CNN、DQN....and so on......
+
 
 
