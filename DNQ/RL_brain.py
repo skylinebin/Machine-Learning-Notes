@@ -57,8 +57,9 @@ class DeepQNetwork:
             # $ tensorboard --logdir=logs
             # tf.train.SummaryWriter soon be deprecated, use following
             tf.summary.FileWriter("logs/", self.sess.graph)
+        #     add Tensorboard files
 
-        self.sess.run(tf.global_variables_initializer())
+        self.sess.run(tf.global_variables_initializer())#init the variables
         self.cost_his = []
 
     def _build_net(self):
@@ -151,8 +152,8 @@ class DeepQNetwork:
         q_next, q_eval = self.sess.run(
             [self.q_next, self.q_eval],
             feed_dict={
-                self.s_: batch_memory[:, -self.n_features:],  # fixed params
-                self.s: batch_memory[:, :self.n_features],  # newest params
+                self.s_: batch_memory[:, -self.n_features:],  # fixed params后四个
+                self.s: batch_memory[:, :self.n_features],  # newest params前四个
             })
 
         # change q_target w.r.t q_eval's action
