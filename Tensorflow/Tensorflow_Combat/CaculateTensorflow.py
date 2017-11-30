@@ -5,7 +5,7 @@ import tensorflow as tf
 
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data',one_hot=True)
-
+# 下载
 
 sess = tf.InteractiveSession()
 #注册一个默认的session
@@ -31,7 +31,7 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 #使用全局参数初始化器指令run方法
 sess.run(tf.global_variables_initializer())
 
-#开始迭代执行训练操作 train_step
+#开始迭代执行训练操作 train_ste
 
 for i in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
