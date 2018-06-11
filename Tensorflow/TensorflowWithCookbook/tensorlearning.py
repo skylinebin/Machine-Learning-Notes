@@ -68,6 +68,7 @@ print(sess.run(oldconstant_tsr))
 print('- - - - - - - - - - - - - - - - - - - -')
 print(sess.run(cropped_output_tsr))
 
+writer = tf.summary.FileWriter('logs/',sess.graph)
 
 # 创建好张量,使用tf.Variable()封装张量作为变量
 print('- - - - - - - - - - - - - - - - - - - -')
