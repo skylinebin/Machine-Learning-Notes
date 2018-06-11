@@ -22,7 +22,7 @@ constant_tsr = tf.constant([1,2,3])
 
 # 新建与已有张量类似的张量
 zero_similar = tf.zeros_like(constant_tsr)
-ones_similar = tf.ones_like(constant_tsr)
+# ones_similar = tf.ones_like(constant_tsr)
 
 # 3.序列张量
 
@@ -68,11 +68,14 @@ print(sess.run(oldconstant_tsr))
 print('- - - - - - - - - - - - - - - - - - - -')
 print(sess.run(cropped_output_tsr))
 
-writer = tf.summary.FileWriter('logs/',sess.graph)
+
 
 # 创建好张量,使用tf.Variable()封装张量作为变量
 print('- - - - - - - - - - - - - - - - - - - -')
 first_zero_var = tf.Variable(zero_tsr)
+sess.run(first_zero_var.initializer)
+# 对已经初始化的变量进行初始化操作方式
+
 
 # 也可使用 tf.convert_to_sensor()
 
@@ -85,4 +88,5 @@ init_x = tf.placeholder(tf.float32, shape=[2,2])
 init_y = tf.identity(init_x)
 x_vals = np.random.rand(2,2)
 sess.run(init_y, feed_dict={init_x: x_vals})
-# print(init_y)
+writer = tf.summary.FileWriter('logs/',sess.graph)
+
