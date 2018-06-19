@@ -42,3 +42,8 @@ tensorboard --logdir logs
 
 ### 详细分析了tensorflow中常用激励函数类型以及对应的原理
 sigmoidFunction.png & sigmoidFunction2.png 展示了激励函数之间的对比情况
+
+
+## in tensordatasource.py
+### 实践了tensorflow中调用和处理数据源的操作方法
+版本出现调整可能导致部分读取数据源方法出现错误
