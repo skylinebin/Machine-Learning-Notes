@@ -47,3 +47,13 @@ sigmoidFunction.png & sigmoidFunction2.png 展示了激励函数之间的对比�
 ## in tensordatasource.py
 ### 实践了tensorflow中调用和处理数据源的操作方法
 版本出现调整可能导致部分读取数据源方法出现错误
+
+
+## in MachineLearningOne.py  MachineLearningTwo.py 
+### 计算图中不同层级的联接 
+
+## in MachineLearningThree.py 
+### 使用 Tensorflow 实现各种损失函数
+
+
+
